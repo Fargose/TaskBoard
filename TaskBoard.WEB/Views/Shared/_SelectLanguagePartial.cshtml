@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNetCore.Builder
+@using Microsoft.AspNetCore.Http.Features
+@using Microsoft.AspNetCore.Localization
+@using Microsoft.AspNetCore.Mvc.Localization
+@using Microsoft.Extensions.Options
+
+@inject IViewLocalizer Localizer
+@inject IOptions<RequestLocalizationOptions> LocOptions
+
+@{
+
+    var requestCulture = Context.Features.Get<IRequestCultureFeature>();
+
+    var cultureItems = LocOptions.Value.SupportedUICultures
+        .Select(c => new SelectListItem { Value = c.Name, Text = c.DisplayName })
+        .ToList();
+    var email = "";
+        if(User.Identity.IsAuthenticated)
+    {
+        email = User.Identity.Name;
+    }
+}
+
+    <form asp-controller="Account" asp-action="SetLanguage"
+          asp-route-returnUrl="@Context.Request.Path" asp-route-email="@email"
+          method="post" class="form-horizontal">
+        @Localizer["Language:"] <select name="culture" onchange="this.form.submit();"
+                                        asp-for="@requestCulture.RequestCulture.UICulture.Name" class = "form-control-sm" asp-items="cultureItems"></select>
+    </form>

@@ -1,0 +1,30 @@
+﻿@model TaskBoard.WEB.ViewModels.WorkTaskViewModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+<h3>@Localizer["Sure"]</h3>
+<div>
+    <hr />
+    <div class="col-md-6">
+        <div class="panel panel-default">
+            <div class="panel-heading"><h3>@Model.Title</h3></div>
+            <div class="panel-body">
+                <div><h5>@Model.Description</h5></div>
+                <div> <label asp-for="@Model.AuthorName" class="control-label"></label> @Model.AuthorName</div>
+                <div> <label asp-for="@Model.CreatedDate" class="control-label"></label>: @Model.CreatedDate</div>
+                <div> <label asp-for="@Model.LastModifiedUserName" class="control-label"></label> @Model.LastModifiedUserName  @Model.UpdatedDate</div>
+
+            </div>
+        </div>
+        <form asp-action="Delete">
+            <input type="submit" value=@Localizer["Delete"] class="btn btn-danger" /> 
+            <a asp-action="Index">@Localizer["Back"]</a>
+        </form>
+    </div>
+
+</div>

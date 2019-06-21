@@ -1,0 +1,102 @@
+﻿@model IEnumerable<TaskBoard.WEB.ViewModels.WorkTaskViewModel>
+
+@using Microsoft.AspNetCore.Mvc.Localization
+
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+    <h1>
+        @Localizer["YourTaskboard"]
+        @ViewData["T"]
+    </h1>
+<p>
+    <a class="btn btn-success" asp-action="Create">@Localizer["Create"]</a>
+</p>
+<div class="row">
+
+    <div style="background-color: lightcoral" class="col-lg-4">
+        <h1>@Localizer["ToDo"]</h1>
+
+        @foreach (var item in Model.Where(m => m.TaskState == "ToDo"))
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>
+    @item.Title
+    <br>
+    <br>
+    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">@Localizer["Edit"]</a>
+    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">@Localizer["Delete"]</a>
+</h3></div>
+                <div class="panel-body">
+                    <div><h5>@item.Description</h5></div>
+                    <div> <label asp-for="@item.AuthorName" class="control-label"></label> @item.AuthorName</div>
+                    <div> <label asp-for="@item.CreatedDate" class="control-label"></label>: @item.CreatedDate</div>
+                    <div> <label asp-for="@item.LastModifiedUserName" class="control-label"></label> @item.LastModifiedUserName  @item.UpdatedDate</div>
+                    <br>
+                    <br>
+                    <a class="btn btn-warning" asp-action="ChangeState" asp-route-id="@item.Id" asp-route-email="@User.Identity.Name" asp-route-state="InProgress">@Localizer["MarkInProgress"]</a>
+
+                    @*@Html.ActionLink("Mark as in Progress", "ChangeState", new { id = item.Id, state = "InProgress" })*@
+
+                </div>
+            </div>
+        }
+    </div>
+    <div style="background-color: lightyellow" class="col-lg-4">
+        <h1>@Localizer["InProgress"]</h1>
+        @foreach (var item in Model.Where(m => m.TaskState == "InProgress"))
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>
+    @item.Title
+    <br>
+    <br>
+    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">@Localizer["Edit"]</a>
+    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">@Localizer["Delete"]</a>
+</h3></div>
+                <div class="panel-body">
+                    <div><h5>@item.Description</h5></div>
+                    <div> <label asp-for="@item.AuthorName" class="control-label"></label> @item.AuthorName</div>
+                    <div> <label asp-for="@item.CreatedDate" class="control-label"></label>: @item.CreatedDate</div>
+                    <div> <label asp-for="@item.LastModifiedUserName" class="control-label"></label> @item.LastModifiedUserName  @item.UpdatedDate</div>
+                    <br>
+                    <br>
+                    <a class="btn btn-warning" asp-action="ChangeState" asp-route-id="@item.Id" asp-route-email="@User.Identity.Name" asp-route-state="ToDO">@Localizer["MarkToDo"]</a>
+                    <a class=" btn btn-success" asp-action="ChangeState" asp-route-id="@item.Id" asp-route-email="@User.Identity.Name" asp-route-state="Done">@Localizer["MarkDone"]</a>
+
+
+                </div>
+            </div>
+        }
+    </div>
+    <div style="background-color: lightgreen" class="col-lg-4">
+        <h1>@Localizer["Done"]</h1>
+        @foreach (var item in Model.Where(m => m.TaskState == "Done"))
+        {
+            <div class="panel panel-default">
+                <div class="panel-heading"><h3>
+    @item.Title
+    <br>  
+                    <br>
+    <a class="btn btn-secondary" asp-action="Edit" asp-route-id="@item.Id">@Localizer["Edit"]</a>
+    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.Id">@Localizer["Delete"]</a>
+</h3></div>
+                <div class="panel-body">
+                    <div><h5>@item.Description</h5></div>
+                    <div> <label asp-for="@item.AuthorName" class="control-label"></label> @item.AuthorName</div>
+                    <div> <label asp-for="@item.CreatedDate" class="control-label"></label>: @item.CreatedDate</div>
+                    <div> <label asp-for="@item.LastModifiedUserName" class="control-label"></label>   @item.LastModifiedUserName  @item.UpdatedDate</div>
+                    <br>
+                    <br>
+                    <a class="btn btn-warning" asp-action="ChangeState" asp-route-id="@item.Id" asp-route-email="@User.Identity.Name" asp-route-state="InProgress">@Localizer["MarkInProgress2"]</a>
+
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+
