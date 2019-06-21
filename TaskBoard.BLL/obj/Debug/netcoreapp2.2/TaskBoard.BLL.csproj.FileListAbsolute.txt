@@ -1,0 +1,12 @@
+D:\TaskBoard\TaskBoard.BLL\bin\Debug\netcoreapp2.2\TaskBoard.BLL.deps.json
+D:\TaskBoard\TaskBoard.BLL\bin\Debug\netcoreapp2.2\TaskBoard.BLL.dll
+D:\TaskBoard\TaskBoard.BLL\obj\Debug\netcoreapp2.2\TaskBoard.BLL.csproj.CoreCompileInputs.cache
+D:\TaskBoard\TaskBoard.BLL\obj\Debug\netcoreapp2.2\TaskBoard.BLL.AssemblyInfoInputs.cache
+D:\TaskBoard\TaskBoard.BLL\obj\Debug\netcoreapp2.2\TaskBoard.BLL.AssemblyInfo.cs
+D:\TaskBoard\TaskBoard.BLL\bin\Debug\netcoreapp2.2\TaskBoard.BLL.pdb
+D:\TaskBoard\TaskBoard.BLL\bin\Debug\netcoreapp2.2\TaskBoard.DAL.dll
+D:\TaskBoard\TaskBoard.BLL\bin\Debug\netcoreapp2.2\TaskBoard.DAL.pdb
+D:\TaskBoard\TaskBoard.BLL\obj\Debug\netcoreapp2.2\TaskBoard.BLL.csprojAssemblyReference.cache
+D:\TaskBoard\TaskBoard.BLL\obj\Debug\netcoreapp2.2\TaskBoard.BLL.csproj.CopyComplete
+D:\TaskBoard\TaskBoard.BLL\obj\Debug\netcoreapp2.2\TaskBoard.BLL.dll
+D:\TaskBoard\TaskBoard.BLL\obj\Debug\netcoreapp2.2\TaskBoard.BLL.pdb

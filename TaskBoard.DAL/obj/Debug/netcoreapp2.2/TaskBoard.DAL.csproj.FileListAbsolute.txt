@@ -1,0 +1,9 @@
+D:\TaskBoard\TaskBoard.DAL\bin\Debug\netcoreapp2.2\TaskBoard.DAL.deps.json
+D:\TaskBoard\TaskBoard.DAL\bin\Debug\netcoreapp2.2\TaskBoard.DAL.dll
+D:\TaskBoard\TaskBoard.DAL\obj\Debug\netcoreapp2.2\TaskBoard.DAL.csproj.CoreCompileInputs.cache
+D:\TaskBoard\TaskBoard.DAL\obj\Debug\netcoreapp2.2\TaskBoard.DAL.AssemblyInfoInputs.cache
+D:\TaskBoard\TaskBoard.DAL\obj\Debug\netcoreapp2.2\TaskBoard.DAL.AssemblyInfo.cs
+D:\TaskBoard\TaskBoard.DAL\obj\Debug\netcoreapp2.2\TaskBoard.DAL.csprojAssemblyReference.cache
+D:\TaskBoard\TaskBoard.DAL\bin\Debug\netcoreapp2.2\TaskBoard.DAL.pdb
+D:\TaskBoard\TaskBoard.DAL\obj\Debug\netcoreapp2.2\TaskBoard.DAL.dll
+D:\TaskBoard\TaskBoard.DAL\obj\Debug\netcoreapp2.2\TaskBoard.DAL.pdb
